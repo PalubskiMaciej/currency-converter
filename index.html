@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walut</title>
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <form class="js-form">
+        <fieldset>
+            <legend>Kalkulator walut</legend>
+            <p>
+                <label>
+                    Wybierz walutę na którą chcesz przeliczyć:
+                    <select class="js-currency" name="currency">
+                        <option value="GBP">GBP</option>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label> Kwota do przeliczenia w PLN:
+                    <input class="js-amount" type="number" name="amount" placeholder="Wpisz kwotę">
+                </label>
+            </p>
+
+            <button class="js-button">Przelicz</button>
+        </fieldset>
+        <p>
+            <span class="js-result">N/a</span>
+        </p>
+        
+    </form>
+</body>
+
+</html>
