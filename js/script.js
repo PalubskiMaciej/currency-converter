@@ -4,6 +4,7 @@ const form = document.querySelector(".js-form");
 const resultElement = document.querySelector(".js-result");
 
 
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -29,6 +30,6 @@ form.addEventListener("submit", (event) => {
 
     }
 
-    resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} PLN`
+    resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} ${(currencyElement.value)}`
 })
 
