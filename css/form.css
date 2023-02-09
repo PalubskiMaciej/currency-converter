@@ -1,0 +1,17 @@
+.form__fieldset {
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 20px 4px #646464;
+
+}
+
+.form__paragraph {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form__label {
+   width: 300px;
+}
