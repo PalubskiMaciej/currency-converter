@@ -27,8 +27,8 @@
             <legend class="form__legend">Kalkulator walut</legend>
             <p>
                 <label class="form__label">
-                    Wybierz walutę na którą chcesz przeliczyć:
-                    <select class="js-currency" name="currency">
+                    <span class="form__labelText ">Wybierz walutę do przeliczenia:</span>
+                    <select class="js-currency form__labelInput form__labelInput--grow" name="currency">
                         <option value="GBP">GBP</option>
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
@@ -36,12 +36,12 @@
                 </label>
             </p>
             <p>
-                <label class="form__label"> Kwota do przeliczenia w PLN:
-                    <input class="js-amount" step="any" type="number" required name="amount" placeholder="Wpisz kwotę">
+                <label class="form__label"> <span class="form__labelText form__labelText--grow">Kwota do przeliczenia w PLN:</span>
+                    <input class="js-amount form__labelInput form__labelInput--grow" step="any" type="number" required name="amount" placeholder="Wpisz kwotę">
                 </label>
             </p>
 
-            <button class="js-button form__button">Przelicz</button>
+            <div class="form__buttonContainer"><button class="js-button form__button">Przelicz</button></div>
         </fieldset>
         <p class="form__paragraph">
             <span class="js-result">N/a</span>
