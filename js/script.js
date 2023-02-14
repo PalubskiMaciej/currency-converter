@@ -3,8 +3,6 @@ const amountElement = document.querySelector(".js-amount");
 const form = document.querySelector(".js-form");
 const resultElement = document.querySelector(".js-result");
 
-
-
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -15,20 +13,23 @@ form.addEventListener("submit", (event) => {
     const EUR = 0.21;
     const USD = 0.23;
 
+    let rate;
+
     switch (currency) {
         case "GBP":
-            result = amount * GBP;
+            rate = GBP;
             break;
 
         case "EUR":
-            result = amount * EUR;
+            rate = EUR;
             break;
 
         case "USD":
-            result = amount * USD;
-            break;
-
+            rate = USD;
+            
     }
+
+    const result = amount * rate;
 
     resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} ${(currencyElement.value)}`
 })

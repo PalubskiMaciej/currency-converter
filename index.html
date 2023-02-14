@@ -28,7 +28,7 @@
             <p>
                 <label class="form__label">
                     <span class="form__labelText ">Wybierz walutę do przeliczenia:</span>
-                    <select class="js-currency form__labelInput form__labelInput--grow" name="currency">
+                    <select class="js-currency form__labelInput" name="currency">
                         <option value="GBP">GBP</option>
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
@@ -37,7 +37,7 @@
             </p>
             <p>
                 <label class="form__label"> <span class="form__labelText form__labelText--grow">Kwota do przeliczenia w PLN:</span>
-                    <input class="js-amount form__labelInput form__labelInput--grow" step="any" type="number" required name="amount" placeholder="Wpisz kwotę">
+                    <input class="js-amount form__labelInput" step="any" min="0" type="number" required name="amount" placeholder="Wpisz kwotę">
                 </label>
             </p>
 

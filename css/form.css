@@ -1,5 +1,6 @@
 .form {
     margin: 10px; 
+    
 }
 
 
@@ -47,16 +48,13 @@
     border-radius: 10px;
     text-align: center;
     min-width: 200px;
+    flex-grow: 1;
 }
 
 .form__labelInput:hover {
     background-color: #cecece;
 }
 
-.form__labelInput--grow {
-    flex-grow: 1;
-
-}
 
 .form__button {
     border: 2px solid black;
