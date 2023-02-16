@@ -33,4 +33,3 @@ form.addEventListener("submit", (event) => {
 
     resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} ${(currencyElement.value)}`
 })
-
