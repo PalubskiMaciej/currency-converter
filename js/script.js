@@ -1,35 +1,39 @@
-const currencyElement = document.querySelector(".js-currency");
-const amountElement = document.querySelector(".js-amount");
-const form = document.querySelector(".js-form");
-const resultElement = document.querySelector(".js-result");
+{
+    const calculateResult = (currency, amount) => {
+        const GBP = 0.19;
+        const EUR = 0.21;
+        const USD = 0.23;
+        switch (currency) {
+            case "GBP":
+                return amount * GBP;
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+            case "EUR":
+                return amount * EUR;
 
-    const amount = +amountElement.value;
-    const currency = currencyElement.value;
-
-    const GBP = 0.19;
-    const EUR = 0.21;
-    const USD = 0.23;
-
-    let rate;
-
-    switch (currency) {
-        case "GBP":
-            rate = GBP;
-            break;
-
-        case "EUR":
-            rate = EUR;
-            break;
-
-        case "USD":
-            rate = USD;
-            
+            case "USD":
+                return amount * USD;
+        }
+    }
+    const updateResultText = (result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} ${(currency)}`
     }
 
-    const result = amount * rate;
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-    resultElement.innerText = `Przeliczona kwota to: ${(result.toFixed(2))} ${(currencyElement.value)}`
-})
+        const currencyElement = document.querySelector(".js-currency");
+        const amountElement = document.querySelector(".js-amount");
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+        const result = calculateResult(currency, amount);
+
+        updateResultText(result, currency);    
+
+    };
+    const init = () => {
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmit); 
+    };
+    init();
+}
