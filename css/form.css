@@ -1,0 +1,27 @@
+.form {
+    margin: 0;
+    padding: 10px;
+}
+
+.form__fieldset {}
+
+.form__legend {
+    border-radius: 5px;
+    background-color: rgb(255, 250, 154);
+    padding: 10px;
+}
+
+.form__text {
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+}
+
+.form__input {
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+.form__button {}
