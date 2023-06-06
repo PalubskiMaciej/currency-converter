@@ -1,5 +1,4 @@
 .form {
-
     margin: 0;
     padding: 10px;
 }
@@ -11,20 +10,16 @@
 }
 
 .form__legend {
+    font-size: 30px;
     font-weight: 700;
     border-radius: 10px;
     text-align: center;
-
 }
 
-.form__paragraph {
-    margin: 0 auto;
-}
-
-.form__paragraph--result {
+.form__result {
     text-align: center;
     font-weight: 700;
-
+    font-size: 25px;
 }
 
 .form__text {
@@ -32,7 +27,6 @@
     max-width: 300px;
     width: 100%;
     margin: 10px 0;
-
 }
 
 .form__input {
@@ -60,12 +54,9 @@
     }
 }
 
-.form__result {}
-
 .form__buttonConteiner {
     display: flex;
     justify-content: center;
-
 }
 
 .form__button {
@@ -73,6 +64,7 @@
     flex-grow: 1;
     max-width: 100%;
     padding: 10px;
+    font-weight: 700;
 }
 
 .form__button:hover {
