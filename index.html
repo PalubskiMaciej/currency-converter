@@ -19,7 +19,7 @@
     <form class="js-form form">
         <fieldset class="form__fieldset">
             <legend class="form__legend">Kalkulator Walut</legend>
-            <p><span class="form__text">Wybierz do przeliczenia:</span>
+            <p class="form__paragraph"><span class="form__text">Waluta do przeliczenia:</span>
                 <select class="js-startedCurrency form__input">
                     <option value="PLN">PLN</option>
                     <option value="EUR">EUR</option>
@@ -29,9 +29,9 @@
             </p>
             <p>
                 <span class="form__text">Kwota do przeliczenia:</span>
-                <input type="number" class="js-amountToConvert form__input">
+                <input type="number" required autofocus step="0.01" min="0.01" class="js-amountToConvert form__input">
             </p>
-            <p><span class="form__text">Wybierz na którą chcesz przeliczyć:</span>
+            <p><span class="form__text">Waluta na którą chcesz przeliczyć:</span>
                 <select class="js-finalCurrency form__input">
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
@@ -39,12 +39,14 @@
                     <option value="PLN">PLN</option>
                 </select>
             </p>
-            <button class="js-button form__button">Przelicz</button>
+            <div class="form__buttonConteiner">
+                <button class="js-button form__button">Przelicz</button>
+            </div>
         </fieldset>
+        <p class="form__paragraph--result">
+            <span class=" js-result "></span>
+        </p>
     </form>
-    <p>
-        <span class="js-result"></span>
-    </p>
 
 </body>
 
