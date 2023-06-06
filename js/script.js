@@ -3,8 +3,6 @@
     resultElement.innerText = (startedCurrency.localeCompare(finalCurrency) === 0) ? `Wybierz różne waluty` : `Po przeliczeniu wyszło: ${(result.toFixed(2))} ${(finalCurrency)}`;
   };
 
-
-
   const calculateResult = (startedCurrency, finalCurrency, amount) => {
     switch (startedCurrency) {
       case "PLN":
