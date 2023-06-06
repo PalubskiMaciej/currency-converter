@@ -1,11 +1,9 @@
 {
   const updateResultText = (startedCurrency, finalCurrency, resultElement, result) => {
-    if (startedCurrency.localeCompare(finalCurrency) === 0) {
-      resultElement.innerText = `Wybierz różne waluty`;
-    } else {
-      resultElement.innerText = `Po przeliczeniu wyszło: ${(result.toFixed(2))} ${(finalCurrency)}`;
-    };
+    resultElement.innerText = (startedCurrency.localeCompare(finalCurrency) === 0) ? `Wybierz różne waluty` : `Po przeliczeniu wyszło: ${(result.toFixed(2))} ${(finalCurrency)}`;
   };
+
+
 
   const calculateResult = (startedCurrency, finalCurrency, amount) => {
     switch (startedCurrency) {
@@ -17,7 +15,6 @@
             return amount * 0.19;
           case "USD":
             return amount * 0.24;
-
         };
       case "EUR":
         switch (finalCurrency) {
@@ -27,7 +24,6 @@
             return amount * 0.86;
           case "USD":
             return amount * 1.07;
-
         };
       case "GBP":
         switch (finalCurrency) {
@@ -37,7 +33,6 @@
             return amount * 1.16;
           case "USD":
             return amount * 1.24;
-
         };
       case "USD":
         switch (finalCurrency) {
@@ -47,7 +42,6 @@
             return amount * 0.93;
           case "GBP":
             return amount * 0.80;
-
         };
     };
   };
