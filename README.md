@@ -1,6 +1,5 @@
 # Currency-converter
 
-Simple currency converter
 ![Demo](images/demo.gif)
 
 ## Demo
