@@ -1,12 +1,14 @@
 {
-  const updateResultText = (startedCurrency, finalCurrency, resultElement, result) => {
-    resultElement.innerText = (startedCurrency.localeCompare(finalCurrency) === 0) ? `Wybierz różne waluty` : `Po przeliczeniu wyszło: ${(result.toFixed(2))} ${(finalCurrency)}`;
+  const updateResultText = (inputCurrency, outputCurrency, resultElement, result) => {
+    resultElement.innerText = inputCurrency === outputCurrency
+      ? `Wybierz różne waluty`
+      : `Po przeliczeniu wyszło: ${(result.toFixed(2))} ${(outputCurrency)}`;
   };
 
-  const calculateResult = (startedCurrency, finalCurrency, amount) => {
-    switch (startedCurrency) {
+  const calculateResult = (inputCurrency, outputCurrency, amount) => {
+    switch (inputCurrency) {
       case "PLN":
-        switch (finalCurrency) {
+        switch (outputCurrency) {
           case "EUR":
             return amount * 0.22;
           case "GBP":
@@ -15,7 +17,7 @@
             return amount * 0.24;
         };
       case "EUR":
-        switch (finalCurrency) {
+        switch (outputCurrency) {
           case "PLN":
             return amount * 4.47;
           case "GBP":
@@ -24,7 +26,7 @@
             return amount * 1.07;
         };
       case "GBP":
-        switch (finalCurrency) {
+        switch (outputCurrency) {
           case "PLN":
             return amount * 5.19;
           case "EUR":
@@ -33,7 +35,7 @@
             return amount * 1.24;
         };
       case "USD":
-        switch (finalCurrency) {
+        switch (outputCurrency) {
           case "PLN":
             return amount * 4.18;
           case "EUR":
@@ -46,16 +48,18 @@
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const startedCurrencyElement = document.querySelector(".js-startedCurrency");
-    const finalCurrencyElement = document.querySelector(".js-finalCurrency");
-    const startedCurrency = startedCurrencyElement.value;
-    const finalCurrency = finalCurrencyElement.value;
+    const inputCurrencyElement = document.querySelector(".js-inputCurrency");
+    const outputCurrencyElement = document.querySelector(".js-outputCurrency");
     const amountElement = document.querySelector(".js-amountToConvert");
-    const amount = +amountElement.value;
     const resultElement = document.querySelector(".js-result");
-    const result = calculateResult(startedCurrency, finalCurrency, amount);
 
-    updateResultText(startedCurrency, finalCurrency, resultElement, result);
+    const inputCurrency = inputCurrencyElement.value;
+    const outputCurrency = outputCurrencyElement.value;
+
+    const amount = +amountElement.value;
+    const result = calculateResult(inputCurrency, outputCurrency, amount);
+
+    updateResultText(inputCurrency, outputCurrency, resultElement, result);
   };
 
   const init = () => {

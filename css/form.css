@@ -1,6 +1,7 @@
 .form {
     margin: 0;
     padding: 10px;
+    opacity: 85%;
 }
 
 .form__fieldset {
@@ -54,7 +55,7 @@
     }
 }
 
-.form__buttonConteiner {
+.form__buttonContainer {
     display: flex;
     justify-content: center;
 }
